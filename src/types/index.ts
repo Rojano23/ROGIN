@@ -29,6 +29,8 @@ export interface CompanyLogo {
   alt: string;
   width?: number;
   height?: number;
+  navbarWidth?: number;
+  navbarHeight?: number;
 }
 
 export interface Differentiator {

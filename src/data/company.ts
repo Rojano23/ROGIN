@@ -6,8 +6,10 @@ export const company: Company = {
   logo: {
     src: new URL('../assets/client/MTVS/mtvs_logo_web.png', import.meta.url).href,
     alt: 'Logotipo de MORE THAN VALVS (MTVS).',
-    width: 156,
-    height: 80,
+    width: 340,
+    height: 100,
+    navbarWidth: 350,
+    navbarHeight: 78,
   },
   descriptor: '',
   tagline: 'CAPACITACIÓN · CONSULTORÍA · COACHING',

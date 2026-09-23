@@ -267,3 +267,12 @@ section {
     grid-template-columns: 1.35fr 1fr 1fr;
   }
 }
+
+@media (min-width: 769px) {
+  .navbar-logo-image {
+    width: 320px !important;
+    height: auto !important;
+    max-width: none;
+    object-fit: contain;
+  }
+}

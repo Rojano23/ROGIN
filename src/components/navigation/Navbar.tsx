@@ -37,7 +37,7 @@ export function Navbar() {
         top: 0,
         zIndex: 20,
         borderBottom: `1px solid ${theme.borderColor}`,
-        backgroundColor: theme.borderColor,
+        backgroundColor: '#EEF2F7',
       }}
     >
       <Container
@@ -58,14 +58,14 @@ export function Navbar() {
           }}
         >
           <a
-            className="focus-ring"
+            className="focus-ring navbar-logo"
             href="#inicio"
             aria-label={`Ir a inicio de ${clientConfig.company.companyName}`}
             style={{
               display: 'inline-flex',
               alignItems: 'flex-start',
               gap: designTokens.spacing.md,
-              color: theme.textOnDarkColor,
+              color: theme.secondaryColor,
               textDecoration: 'none',
               fontFamily: theme.fontFamilyHeading,
               fontWeight: 700,
@@ -74,14 +74,23 @@ export function Navbar() {
           >
             {hasLogo ? (
               <img
+                className="navbar-logo-image"
                 src={logo?.src}
                 alt={logo?.alt ?? `Logotipo de ${company.companyName}`}
                 width={logo?.width}
                 height={logo?.height}
                 style={{
                   display: 'block',
-                  width: logo?.width ? `${logo.width + 12}px` : '2.2rem',
-                  height: logo?.height ? `${logo.height + 4}px` : '2.2rem',
+                  width: logo?.navbarWidth
+                    ? `${logo.navbarWidth}px`
+                    : logo?.width
+                      ? `${logo.width}px`
+                      : '2.8rem',
+                  height: logo?.navbarHeight
+                    ? `${logo.navbarHeight}px`
+                    : logo?.height
+                      ? `${logo.height}px`
+                      : '2.8rem',
                   objectFit: 'contain',
                   marginTop: '0.1rem',
                 }}
@@ -98,14 +107,14 @@ export function Navbar() {
               />
             )}
             <div style={{ display: 'grid', gap: '0.08rem', lineHeight: 1.05 }}>
-              <span style={{ fontSize: 'clamp(0.95rem, 1.7vw, 1.12rem)', letterSpacing: '0.01em' }}>{company.companyName}</span>
+              <span style={{ fontSize: 'clamp(1rem, 1.75vw, 1.16rem)', letterSpacing: '0.01em' }}>{company.companyName}</span>
               {company.descriptor ? (
                 <span
                   style={{
-                    fontSize: '0.67rem',
+                    fontSize: '0.7rem',
                     letterSpacing: '0.08em',
                     textTransform: 'uppercase',
-                    color: theme.accentColor,
+                    color: theme.primaryColor,
                     fontFamily: theme.fontFamily,
                     fontWeight: 700,
                   }}
@@ -125,6 +134,10 @@ export function Navbar() {
                 isActive={activeHref === item.href}
                 onClick={() => handleLinkClick(item.href)}
                 aria-label={`Ir a ${item.label}`}
+                style={{
+                  color: activeHref === item.href ? theme.textOnDarkColor : theme.secondaryColor,
+                  borderColor: activeHref === item.href ? theme.primaryColor : 'transparent',
+                }}
               />
             ))}
 
@@ -138,7 +151,7 @@ export function Navbar() {
                 borderRadius: theme.radius,
                 border: '1px solid #FF7C1A',
                 fontWeight: 700,
-                padding: `${designTokens.spacing.xs} ${designTokens.spacing.sm}`,
+                padding: `${designTokens.spacing.sm} ${designTokens.spacing.md}`,
                 minHeight: '2.25rem',
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -159,6 +172,10 @@ export function Navbar() {
               aria-controls="mobile-navigation-panel"
               onClick={() => setIsMobileMenuOpen((current) => !current)}
               className="focus-ring"
+              style={{
+                color: theme.secondaryColor,
+                borderColor: theme.secondaryColor,
+              }}
             >
               {isMobileMenuOpen ? 'Cerrar' : 'Menú'}
             </Button>
