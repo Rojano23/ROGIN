@@ -1,4 +1,5 @@
 import { SeoMetadata } from './components/layout';
+import { FloatingActionButton } from './components/ui';
 import { HomePage } from './pages/HomePage';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <SeoMetadata />
       <HomePage />
+      <FloatingActionButton />
     </>
   );
 }

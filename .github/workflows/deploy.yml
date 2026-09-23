@@ -1,4 +1,4 @@
-name: EPC DEL SURESTE Deploy to GitHub Pages
+name: ROGIN Deploy to GitHub Pages
 
 on:
   push:

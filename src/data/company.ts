@@ -74,6 +74,8 @@ export const company: Company = {
   aboutCertifications: [],
   phone: '(228) 8-10-30-62',
   email: 'constructora_rogin@outlook.com',
+  whatsapp: '(228) 8-10-30-62',
+  whatsappMessage: 'Hola, quiero información sobre servicios de construcción e infraestructura.',
   address: 'Calle Priv. de Ferrocarril Interoceánico No. 11 Int. 7, Col. 7 de Noviembre, C.P. 91143, Xalapa, Veracruz.',
   businessHours: 'Lunes a viernes de 9:00 a 18:00',
   googleMapsUrl: '',

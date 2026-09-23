@@ -76,6 +76,8 @@ export interface Company {
   aboutCertifications?: string[];
   phone: string;
   email: string;
+  whatsapp: string;
+  whatsappMessage?: string;
   address: string;
   businessHours: string;
   googleMapsUrl: string;
@@ -193,6 +195,7 @@ export interface FeatureFlags {
   projects: boolean;
   differentiators: boolean;
   gallery: boolean;
+  whatsapp: boolean;
   socialLinks: boolean;
   contactForm: boolean;
   maps: boolean;
