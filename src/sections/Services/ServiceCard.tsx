@@ -63,7 +63,7 @@ export function ServiceCard({ service, contentAlignment }: ServiceCardProps) {
       {service.image && <img src={service.image} alt={service.imageAlt} style={imageStyle} loading="lazy" />}
       <div style={headerStyle}>
         <h3 style={titleStyle}>{service.title}</h3>
-        {service.category ? <Badge label={isAdvanced ? 'Nivel: Avanzado' : 'Nivel: Fundamental / Intermedio'} tone="border" /> : null}
+        {service.category ? <Badge label={isAdvanced ? 'Nivel: Avanzado' : 'Nivel: Intermedio'} tone="border" /> : null}
       </div>
       <p style={descriptionStyle}>{service.shortDescription}</p>
       <div style={{ marginTop: 'auto' }}>
