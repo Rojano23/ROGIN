@@ -44,7 +44,7 @@ export function ContactDetails({ company }: ContactDetailsProps) {
         ))}
       </div>
       <p style={{ margin: 0, color: theme.textSecondaryColor, lineHeight: 1.6 }}>
-        Escríbenos para recibir información sobre cursos y servicios de MTVS.
+        Escríbenos para recibir información sobre su proyecto de construcción, infraestructura o mantenimiento.
       </p>
     </section>
   );

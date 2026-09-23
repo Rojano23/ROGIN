@@ -135,7 +135,7 @@ export function Navbar() {
                 onClick={() => handleLinkClick(item.href)}
                 aria-label={`Ir a ${item.label}`}
                 style={{
-                  color: activeHref === item.href ? theme.textOnDarkColor : theme.secondaryColor,
+                  color: activeHref === item.href ? '#FFFFFF' : theme.secondaryColor,
                   borderColor: activeHref === item.href ? theme.primaryColor : 'transparent',
                 }}
               />

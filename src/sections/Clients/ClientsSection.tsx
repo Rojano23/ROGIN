@@ -1,21 +1,22 @@
 import { Section } from '../../components/layout';
 import { SectionTitle } from '../../components/ui';
-import { mtvsClients } from '../../data';
+import { roginOrganizations } from '../../data';
 import { theme } from '../../data/theme';
 import { designTokens } from '../../styles/tokens';
 
 export function ClientsSection() {
     return (
-        <Section ariaLabel="Clientes" id="clientes" spacing="lg" style={{ backgroundColor: '#FFFFFF' }}>
+        <Section ariaLabel="Instituciones y gobiernos" id="instituciones" spacing="lg" style={{ backgroundColor: '#FFFFFF' }}>
             <div style={{ display: 'grid', gap: designTokens.spacing.lg }}>
                 <SectionTitle
                     as="h2"
-                    eyebrow="Clientes"
-                    title="Organizaciones que han participado en nuestros programas de capacitación"
+                    eyebrow="Experiencia institucional"
+                    title="Experiencia con instituciones y gobiernos"
+                    subtitle="Instituciones y gobiernos para los que ROGIN documenta experiencia"
                 />
 
-                <div className="clients-grid" role="list" aria-label="Organizaciones participantes">
-                    {mtvsClients.map((client) => (
+                <div className="clients-grid" role="list" aria-label="Instituciones y gobiernos con experiencia en ROGIN">
+                    {roginOrganizations.map((client) => (
                         <article
                             key={client.id}
                             role="listitem"
@@ -28,17 +29,13 @@ export function ClientsSection() {
                                 gap: designTokens.spacing.sm,
                                 alignItems: 'center',
                                 justifyItems: 'center',
-                                minHeight: '8.5rem',
+                                minHeight: '7.5rem',
                             }}
                             aria-label={client.name}
                         >
-                            <img
-                                src={client.logo}
-                                alt={client.alt}
-                                style={{ maxWidth: '92%', maxHeight: '3.65rem', objectFit: 'contain', filter: 'grayscale(100%) contrast(130%)' }}
-                                loading="lazy"
-                            />
-                            <p style={{ margin: 0, textAlign: 'center', fontSize: '0.9rem', color: theme.textColor }}>{client.name}</p>
+                            <p style={{ margin: 0, textAlign: 'center', fontSize: '0.9rem', color: theme.textColor, lineHeight: 1.5 }}>
+                                {client.name}
+                            </p>
                         </article>
                     ))}
                 </div>

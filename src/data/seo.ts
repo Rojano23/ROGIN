@@ -1,26 +1,24 @@
 import type { SEO } from '../types';
 
 export const seo: SEO = {
-  title: 'MTVS | Capacitación técnica para la industria real',
+  title: 'Constructora ROGIN | Construcción e Infraestructura en Veracruz',
   description:
-    'Capacitación, consultoría y coaching técnico para la industria en válvulas, tuberías, materiales, corrosión, mantenimiento y mejores prácticas ASME, ISO y ASTM.',
+    'Constructora ROGIN S.A. de C.V. desarrolla proyectos de obra civil, edificación, pavimentación, infraestructura hidráulica, mantenimiento e instalaciones en Veracruz.',
   keywords: [
-    'MTVS',
-    'MORE THAN VALVS',
-    'capacitación técnica',
-    'válvulas industriales',
-    'tuberías',
-    'corrosión',
-    'mantenimiento industrial',
-    'ASME',
-    'ISO',
-    'ASTM',
+    'construcción Veracruz',
+    'obra civil Xalapa',
+    'infraestructura',
+    'pavimentación',
+    'drenaje',
+    'agua potable',
+    'mantenimiento hospitalario',
+    'edificación',
   ],
-  favicon: '/favicon-mtvs.png',
+  favicon: new URL('../assets/client/ROGIN/rogin_logo_web.png', import.meta.url).href,
   canonical: '',
-  ogTitle: 'MTVS | Capacitación técnica para la industria real',
+  ogTitle: 'Constructora ROGIN | Construcción e Infraestructura en Veracruz',
   ogDescription:
-    'Formación técnico-estratégica para la industria energética y de procesos, con enfoque real en operación y mantenimiento.',
-  ogImage: '/og-mtvs.png',
+    'Constructora ROGIN S.A. de C.V. ofrece soluciones de obra civil, edificación, infraestructura hidráulica, pavimentación y mantenimiento para instituciones, municipios y clientes particulares.',
+  ogImage: new URL('../assets/client/ROGIN/hero_infraestructura_xalapa.jpg', import.meta.url).href,
   ogType: 'website',
 };

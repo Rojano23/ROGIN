@@ -4,4 +4,4 @@ export { Button } from './Button';
 export type { ButtonProps } from './Button';
 export { SectionTitle } from './SectionTitle';
 export type { SectionTitleProps } from './SectionTitle';
-export { WhatsAppButton } from './WhatsAppButton';
+export { FloatingActionButton } from './FloatingActionButton';

@@ -21,7 +21,6 @@ export const clientConfig: ClientConfig = {
   contact: {
     phone: company.phone,
     email: company.email,
-    whatsapp: company.whatsapp,
     address: company.address,
     businessHours: company.businessHours,
     googleMapsUrl: company.googleMapsUrl,

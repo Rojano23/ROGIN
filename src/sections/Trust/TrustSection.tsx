@@ -1,23 +1,22 @@
 import { BaseCard } from '../../components/cards';
 import { Section } from '../../components/layout';
 import { SectionTitle } from '../../components/ui';
-import { mtvsTrustRecord } from '../../data';
 import { theme } from '../../data/theme';
 import { designTokens } from '../../styles/tokens';
 
 export function TrustSection() {
     return (
-        <Section ariaLabel="Registro profesional" id="registro" spacing="md" style={{ backgroundColor: '#FFFFFF' }}>
+        <Section ariaLabel="Compromisos" id="compromisos-institucionales" spacing="md" style={{ backgroundColor: '#FFFFFF' }}>
             <div style={{ display: 'grid', gap: designTokens.spacing.lg }}>
                 <SectionTitle
                     as="h2"
                     eyebrow="Confianza"
-                    title="Registro profesional"
-                    subtitle="Información institucional mostrada conforme al brochure."
+                    title="Compromiso con la ejecución"
+                    subtitle="Trabajamos con procesos, seguridad y responsabilidad en cada etapa del proyecto."
                 />
 
                 <BaseCard
-                    ariaLabel="Registro STPS"
+                    ariaLabel="Compromiso institucional"
                     style={{
                         display: 'grid',
                         gap: designTokens.spacing.md,
@@ -26,18 +25,12 @@ export function TrustSection() {
                         maxWidth: '40rem',
                     }}
                 >
-                    <img
-                        src={mtvsTrustRecord.logo}
-                        alt="Logotipo STPS"
-                        width={170}
-                        height={82}
-                        style={{ objectFit: 'contain' }}
-                    />
-                    <p style={{ margin: 0, fontWeight: 700, fontSize: '1.05rem' }}>{mtvsTrustRecord.title}</p>
-                    <p style={{ margin: 0, color: theme.accentColor, fontFamily: theme.fontFamilyHeading, fontSize: '1.35rem', letterSpacing: '0.04em' }}>
-                        {mtvsTrustRecord.code}
+                    <p style={{ margin: 0, fontWeight: 700, fontSize: '1.05rem', color: theme.textOnDarkColor }}>
+                        Calidad · Seguridad · Responsabilidad ambiental
                     </p>
-                    <p style={{ margin: 0, color: theme.textOnDarkColor }}>{mtvsTrustRecord.note}</p>
+                    <p style={{ margin: 0, color: theme.textOnDarkColor, lineHeight: 1.7 }}>
+                        Nuestra forma de operar se orienta a la entrega de obras con cumplimiento, orden administrativo y atención responsable a las necesidades de cada cliente.
+                    </p>
                 </BaseCard>
             </div>
         </Section>

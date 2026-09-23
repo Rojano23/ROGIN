@@ -5,7 +5,7 @@ import { theme } from '../../data/theme';
 import { designTokens } from '../../styles/tokens';
 import { BaseCard } from '../../components/cards';
 import { Button } from '../../components/ui';
-import { Badge } from '../../components/ui';
+//import { Badge } from '../../components/ui';
 
 export interface ServiceCardProps {
   service: Service;
@@ -13,7 +13,7 @@ export interface ServiceCardProps {
 }
 
 export function ServiceCard({ service, contentAlignment }: ServiceCardProps) {
-  const isAdvanced = service.category === 'Avanzados';
+  //  const isAdvanced = service.category === 'Avanzados';
 
   const cardStyle: CSSProperties = {
     height: '100%',
@@ -63,7 +63,7 @@ export function ServiceCard({ service, contentAlignment }: ServiceCardProps) {
       {service.image && <img src={service.image} alt={service.imageAlt} style={imageStyle} loading="lazy" />}
       <div style={headerStyle}>
         <h3 style={titleStyle}>{service.title}</h3>
-        {service.category ? <Badge label={isAdvanced ? 'Nivel: Avanzado' : 'Nivel: Intermedio'} tone="border" /> : null}
+        {/* {service.category ? <Badge label={isAdvanced ? 'Nivel: Avanzado' : 'Nivel: Intermedio'} tone="border" /> : null} */}
       </div>
       <p style={descriptionStyle}>{service.shortDescription}</p>
       <div style={{ marginTop: 'auto' }}>

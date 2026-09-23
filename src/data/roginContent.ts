@@ -19,7 +19,7 @@ export const roginValues: ROGINValueItem[] = [
     {
         id: 'security',
         title: 'Seguridad',
-        description: 'Promovemos la seguridad e integridad del personal, las instalaciones y el entorno, reduciendo riesgos mediante capacitación, vigilancia y mejora continua.',
+        description: 'Promovemos la seguridad e integridad del personal, las instalaciones y el entorno, reduciendo riesgos mediante vigilancia, procedimientos y mejora continua.',
     },
     {
         id: 'environmental-responsibility',

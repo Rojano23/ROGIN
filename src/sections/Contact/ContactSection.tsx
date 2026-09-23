@@ -1,6 +1,6 @@
 import { Section } from '../../components/layout';
 import { SectionTitle } from '../../components/ui';
-import { clientConfig, mtvsContactImage } from '../../data';
+import { clientConfig, roginContactImage } from '../../data';
 import { theme } from '../../data/theme';
 import { designTokens } from '../../styles/tokens';
 import { ContactDetails } from './ContactDetails';
@@ -17,8 +17,8 @@ export function ContactSection() {
         <SectionTitle
           as="h2"
           eyebrow="Contacto"
-          title="Hablemos de capacitación"
-          subtitle="Atendemos solicitudes de información sobre cursos, consultoría y coaching técnico."
+          title="Hablemos de su proyecto"
+          subtitle="Atendemos solicitudes de obra civil, infraestructura, mantenimiento e instalaciones."
         />
 
         <div className="contact-grid" style={{ display: 'grid', gap: designTokens.spacing.lg }}>
@@ -29,11 +29,11 @@ export function ContactSection() {
             <ContactMethods company={company} showSocialLinks={featureFlags.socialLinks} />
           </div>
 
-          {mtvsContactImage.src ? (
+          {roginContactImage.src ? (
             <div className="contact-full">
               <img
-                src={mtvsContactImage.src}
-                alt={mtvsContactImage.alt}
+                src={roginContactImage.src}
+                alt={roginContactImage.alt}
                 style={{
                   width: '100%',
                   borderRadius: designTokens.radius.lg,

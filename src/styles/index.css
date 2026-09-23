@@ -4,12 +4,13 @@
 
 :root {
   color-scheme: light;
-  --color-primary: #172a4d;
-  --color-secondary: #0a093b;
-  --color-background: #f6f7fa;
-  --color-text: #292f38;
-  --color-muted: #5a6472;
-  --color-border: #d6dde8;
+  --color-primary: #07572d;
+  --color-secondary: #333b75;
+  --color-accent: #dea300;
+  --color-background: #f5f7f8;
+  --color-text: #202733;
+  --color-muted: #999cab;
+  --color-border: #d6d9e7;
   --font-body: 'Source Sans 3', 'Segoe UI', Tahoma, sans-serif;
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
@@ -270,7 +271,7 @@ section {
 
 @media (min-width: 769px) {
   .navbar-logo-image {
-    width: 320px !important;
+    width: 58px !important;
     height: auto !important;
     max-width: none;
     object-fit: contain;

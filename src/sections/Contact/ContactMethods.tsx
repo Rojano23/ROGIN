@@ -11,15 +11,6 @@ export interface ContactMethodsProps {
   showSocialLinks: boolean;
 }
 
-function buildWhatsAppUrl(phone: string, message?: string): string {
-  const normalizedPhone = phone.replace(/\D+/g, '');
-  if (!message) {
-    return `https://wa.me/${normalizedPhone}`;
-  }
-
-  return `https://wa.me/${normalizedPhone}?text=${encodeURIComponent(message)}`;
-}
-
 export function ContactMethods({ company, showSocialLinks }: ContactMethodsProps) {
   const socialEntries = [
     { label: 'LinkedIn', href: company.socialLinks.linkedin },
@@ -39,7 +30,7 @@ export function ContactMethods({ company, showSocialLinks }: ContactMethodsProps
   return (
     <section aria-label="Métodos de contacto" style={{ display: 'grid', gap: designTokens.spacing.md }}>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: designTokens.spacing.xs }}>
-        <Badge label={`WhatsApp: ${company.whatsapp}`} tone="border" />
+        <Badge label={`Teléfono: ${company.phone}`} tone="border" />
         <Badge label={`Correo: ${company.email}`} tone="accent" />
       </div>
 
@@ -54,26 +45,19 @@ export function ContactMethods({ company, showSocialLinks }: ContactMethodsProps
         <div style={{ display: 'grid', gap: designTokens.spacing.xs }}>
           <p style={{ margin: 0, fontWeight: 700, color: theme.textOnDarkColor }}>Canales de atención</p>
           <p style={{ margin: 0, color: theme.textOnDarkColor, opacity: 0.9 }}>
-            Respuesta por WhatsApp y correo para información de cursos y servicios.
+            Respuesta por teléfono o correo para información de obra civil, infraestructura y mantenimiento.
           </p>
         </div>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: designTokens.spacing.sm }}>
-          <a
-            href={buildWhatsAppUrl(company.whatsapp, company.whatsappMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="focus-ring"
-            style={{ textDecoration: 'none' }}
-            aria-label="Solicitar información por WhatsApp"
-          >
-            <Button ariaLabel="Solicitar información por WhatsApp" variant="primary" size="sm">
-              Solicitar información por WhatsApp
+          <a href={`tel:+522288103062`} className="focus-ring" style={{ textDecoration: 'none' }} aria-label="Llamar al teléfono de ROGIN">
+            <Button ariaLabel="Llamar al teléfono de ROGIN" variant="primary" size="sm">
+              Llamar ahora
             </Button>
           </a>
 
-          <a href={`mailto:${company.email}`} className="focus-ring" style={{ textDecoration: 'none' }} aria-label="Enviar correo a MTVS">
-            <Button ariaLabel="Enviar correo a MTVS" variant="secondary" size="sm">
+          <a href={`mailto:${company.email}`} className="focus-ring" style={{ textDecoration: 'none' }} aria-label="Enviar correo a Constructora ROGIN">
+            <Button ariaLabel="Enviar correo a Constructora ROGIN" variant="secondary" size="sm">
               Enviar correo
             </Button>
           </a>

@@ -32,15 +32,15 @@ export interface DesignTokens {
 
 export const designTokens: DesignTokens = {
   colors: {
-    primary: '#172A4D',
-    secondary: '#0A093B',
-    accent: '#E4D11F',
-    background: '#F6F7FA',
-    text: '#292F38',
-    textSecondary: '#202A36',
+    primary: '#07572D',
+    secondary: '#333B75',
+    accent: '#DEA300',
+    background: '#F5F7F8',
+    text: '#202733',
+    textSecondary: '#67688F',
     textOnDark: '#FFFFFF',
-    muted: '#5A6472',
-    border: '#D6DDE8',
+    muted: '#999CAB',
+    border: '#D6D9E7',
   },
   typography: {
     body: '"Source Sans 3", "Segoe UI", Tahoma, sans-serif',
@@ -51,7 +51,7 @@ export const designTokens: DesignTokens = {
     md: '0.75rem',
     lg: '1rem',
   },
-  shadow: '0 10px 28px rgba(10, 9, 59, 0.16)',
+  shadow: '0 12px 30px rgba(11, 22, 32, 0.12)',
   spacing: {
     xs: '0.25rem',
     sm: '0.5rem',

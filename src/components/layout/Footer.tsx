@@ -42,19 +42,16 @@ export function Footer() {
                 alt={company.logo.alt}
                 width={company.logo.width}
                 height={company.logo.height}
-                style={{ maxWidth: '11.5rem', height: 'auto', objectFit: 'contain' }}
+                style={{ width: '4.5rem', height: 'auto', objectFit: 'contain', marginBottom: designTokens.spacing.sm }}
               />
             ) : null}
 
             <h2 style={{ margin: `${designTokens.spacing.xs} 0 0`, fontSize: '1.125rem', color: theme.textOnDarkColor }}>
               {company.companyName}
             </h2>
-            <p style={{ margin: `${designTokens.spacing.xs} 0 0`, color: theme.textOnDarkColor, maxWidth: '20ch', lineHeight: 1.45 }}>
+            <p style={{ margin: `${designTokens.spacing.xs} 0 0`, color: theme.textOnDarkColor, maxWidth: '22ch', lineHeight: 1.45 }}>
               {company.tagline}
             </p>
-            {company.descriptor ? (
-              <p style={{ margin: `${designTokens.spacing.sm} 0 0`, color: theme.accentColor, fontWeight: 700 }}>{company.descriptor}</p>
-            ) : null}
           </section>
 
           <nav aria-label="Navegación del pie de página">
@@ -81,15 +78,20 @@ export function Footer() {
           <section aria-label="Contacto en pie de página">
             <h3 style={sectionTitleStyle}>Contacto</h3>
             <p style={{ margin: `0 0 ${designTokens.spacing.xs}`, color: theme.textOnDarkColor }}>
+              <a href={`tel:+522288103062`} style={{ color: theme.textOnDarkColor, textDecoration: 'none' }}>
+                {company.phone}
+              </a>
+            </p>
+            <p style={{ margin: `0 0 ${designTokens.spacing.xs}`, color: theme.textOnDarkColor }}>
               <a href={`mailto:${company.email}`} style={{ color: theme.textOnDarkColor, textDecoration: 'none' }}>
                 {company.email}
               </a>
             </p>
-            <p style={{ margin: 0, color: theme.textOnDarkColor }}>{company.phone}</p>
+            <p style={{ margin: 0, color: theme.textOnDarkColor }}>Xalapa, Veracruz</p>
           </section>
         </div>
 
-        <p style={{ margin: `${designTokens.spacing.sm} 0 0`, color: '#9AA9C5', fontSize: '0.875rem' }}>
+        <p style={{ margin: `${designTokens.spacing.sm} 0 0`, color: '#C2C7D9', fontSize: '0.875rem' }}>
           © {new Date().getFullYear()} {company.companyName}. Todos los derechos reservados.
         </p>
       </Container>

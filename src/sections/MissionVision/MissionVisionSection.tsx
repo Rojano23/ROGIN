@@ -1,7 +1,7 @@
 import { BaseCard } from '../../components/cards';
 import { Section } from '../../components/layout';
 import { SectionTitle } from '../../components/ui';
-import { clientConfig, mtvsMissionImage } from '../../data';
+import { clientConfig, roginMissionImage } from '../../data';
 import { theme } from '../../data/theme';
 import { designTokens } from '../../styles/tokens';
 
@@ -15,14 +15,14 @@ export function MissionVisionSection() {
                     as="h2"
                     eyebrow="Nuestra esencia"
                     title="Misión y visión"
-                    subtitle="Formación técnico-estratégica para transformar desempeño en la industria real."
+                    subtitle="Calidad, cumplimiento y valor para la sociedad."
                 />
 
                 <div className="hero-grid" style={{ display: 'grid', gap: designTokens.spacing.lg, alignItems: 'stretch' }}>
                     <figure style={{ margin: 0 }}>
                         <img
-                            src={mtvsMissionImage.src}
-                            alt={mtvsMissionImage.alt}
+                            src={roginMissionImage.src}
+                            alt={roginMissionImage.alt}
                             style={{
                                 width: '100%',
                                 height: '100%',
@@ -36,7 +36,7 @@ export function MissionVisionSection() {
                     </figure>
 
                     <div style={{ display: 'grid', gap: designTokens.spacing.md }}>
-                        <BaseCard ariaLabel="Misión MTVS" style={{ height: '100%' }}>
+                        <BaseCard ariaLabel="Misión de ROGIN" style={{ height: '100%' }}>
                             <h3 style={{ margin: `0 0 ${designTokens.spacing.sm}` }}>Misión</h3>
                             <p style={{ margin: 0, lineHeight: 1.7 }}>{company.mission}</p>
                         </BaseCard>
@@ -56,7 +56,7 @@ export function MissionVisionSection() {
                             </blockquote>
                         ) : null}
 
-                        <BaseCard ariaLabel="Visión MTVS" style={{ height: '100%' }}>
+                        <BaseCard ariaLabel="Visión de ROGIN" style={{ height: '100%' }}>
                             <h3 style={{ margin: `0 0 ${designTokens.spacing.sm}` }}>Visión</h3>
                             <p style={{ margin: 0, lineHeight: 1.7 }}>{company.vision}</p>
                         </BaseCard>

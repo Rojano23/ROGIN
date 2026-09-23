@@ -1,23 +1,23 @@
 import { BaseCard } from '../../components/cards';
 import { Section } from '../../components/layout';
 import { SectionTitle } from '../../components/ui';
-import { mtvsValues } from '../../data';
+import { roginValues } from '../../data';
 import { theme } from '../../data/theme';
 import { designTokens } from '../../styles/tokens';
 
 export function ValuesSection() {
     return (
-        <Section ariaLabel="Valores" id="valores" spacing="lg">
+        <Section ariaLabel="Nuestros compromisos" id="compromisos" spacing="lg">
             <div style={{ display: 'grid', gap: designTokens.spacing.lg }}>
                 <SectionTitle
                     as="h2"
-                    eyebrow="Nuestra cultura"
-                    title="Valores"
-                    subtitle="Capacitación real basada en ASME, ISO y ASTM."
+                    eyebrow="Nuestros compromisos"
+                    title="Calidad, seguridad y responsabilidad"
+                    subtitle="Principios que orientan cada proyecto y cada decisión en obra."
                 />
 
-                <div className="values-grid" role="list" aria-label="Valores MTVS">
-                    {mtvsValues.map((value) => (
+                <div className="values-grid" role="list" aria-label="Nuestros compromisos de ROGIN">
+                    {roginValues.map((value) => (
                         <div key={value.id} role="listitem" style={{ display: 'flex' }}>
                             <BaseCard
                                 ariaLabel={value.title}
