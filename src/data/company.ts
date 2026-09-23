@@ -6,10 +6,10 @@ export const company: Company = {
   logo: {
     src: new URL('../assets/client/MTVS/mtvs_logo_web.png', import.meta.url).href,
     alt: 'Logotipo de MORE THAN VALVS (MTVS).',
-    width: 340,
+    width: 320,
     height: 100,
-    navbarWidth: 350,
-    navbarHeight: 78,
+    navbarWidth: 120,
+    navbarHeight: 60,
   },
   descriptor: '',
   tagline: 'CAPACITACIÓN · CONSULTORÍA · COACHING',
@@ -44,12 +44,12 @@ export const company: Company = {
     'Nuestro enfoque tecnológico nos permite desarrollar talento y formar profesionistas con habilidades laborales y competencias industriales que acompañan a personas y organizaciones a expandir su capacidad de generar resultados.',
     'Somos una solución a las necesidades de capacitación de las empresas, formando profesionales que resuelven problemas reales, generan valor sostenible y resultados en planta.',
   ],
-  aboutHighlights: [
-    'Formación técnica',
-    'Aplicación industrial real',
-    'Mejores prácticas',
-    'Desarrollo de talento',
-  ],
+  //aboutHighlights: [
+  //  'Formación técnica',
+  //  'Aplicación industrial real',
+  //  'Mejores prácticas',
+  //  'Desarrollo de talento',
+  //],
   mission:
     'Desarrollar competencias técnicas, estratégicas e industriales en profesionales de todos los niveles, promoviendo una cultura de aprendizaje continuo donde cada persona aporte valor, hable el mismo idioma y genere resultados.',
   missionQuote:

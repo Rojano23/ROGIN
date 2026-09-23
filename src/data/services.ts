@@ -13,7 +13,7 @@ export const services: Service[] = [
     detailedDescription:
       'Formación para fortalecer criterios técnicos de selección, funcionamiento y aplicación de válvulas industriales.',
     icon: '',
-    featured: true,
+    featured: false,
     image: courseImageA,
     imageAlt: 'Participantes en sesión técnica industrial.',
     category: 'Fundamentales / Intermedios',
@@ -78,7 +78,7 @@ export const services: Service[] = [
     detailedDescription:
       'Capacitación para mejorar diagnóstico, intervención y confiabilidad operacional de válvulas industriales.',
     icon: '',
-    featured: true,
+    featured: false,
     image: courseImageB,
     imageAlt: 'Entrenamiento avanzado en mantenimiento industrial.',
     category: 'Avanzados',
