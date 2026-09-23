@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
 
-  base: '/MTVS/',
+  base: '/ROGIN/',
 
   server: {
     host: '0.0.0.0',
