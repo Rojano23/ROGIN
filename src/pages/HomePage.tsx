@@ -2,16 +2,19 @@ import { Footer, PageWrapper } from '../components/layout';
 import { Navbar } from '../components/navigation';
 import { HeroSection } from '../sections/Hero';
 import { AboutSection } from '../sections/About';
+import { MissionVisionSection } from '../sections/MissionVision/MissionVisionSection';
+import { ValuesSection } from '../sections/Values/ValuesSection';
+import { TrustSection } from '../sections/Trust/TrustSection';
 import { ServicesSection } from '../sections/Services';
-import { IndustriesSection } from '../sections/Industries';
-import { ProjectsSection } from '../sections/Projects';
 import { BrandsGallerySection } from '../sections/BrandsGallery';
 import { DifferentiatorsSection } from '../sections/Differentiators';
+import { SpecialistSection } from '../sections/Specialist/SpecialistSection';
+import { TeamSection } from '../sections/Team/TeamSection';
+import { ClientsSection } from '../sections/Clients/ClientsSection';
 import { ContactSection } from '../sections/Contact';
 import { WhatsAppButton } from '../components/ui';
 import { clientConfig } from '../data';
 
-// Composición mínima de la página de inicio para preparar la evolución hacia secciones del MVP.
 export function HomePage() {
   return (
     <PageWrapper>
@@ -21,15 +24,23 @@ export function HomePage() {
 
       <AboutSection />
 
+      <MissionVisionSection />
+
+      <ValuesSection />
+
+      <TrustSection />
+
       <ServicesSection />
 
-      <IndustriesSection />
+      <DifferentiatorsSection />
 
-      <ProjectsSection />
+      <SpecialistSection />
+
+      <TeamSection />
 
       {clientConfig.featureFlags.gallery && <BrandsGallerySection />}
 
-      <DifferentiatorsSection />
+      <ClientsSection />
 
       <ContactSection />
 

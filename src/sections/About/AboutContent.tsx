@@ -2,7 +2,7 @@ import type { Company, ContentTextAlignment } from '../../types';
 
 import { theme } from '../../data/theme';
 import { designTokens } from '../../styles/tokens';
-import { SectionTitle } from '../../components/ui';
+import { Badge, SectionTitle } from '../../components/ui';
 
 export interface AboutContentProps {
   company: Company;
@@ -10,81 +10,41 @@ export interface AboutContentProps {
 }
 
 export function AboutContent({ company, contentAlignment }: AboutContentProps) {
+  const paragraphs = company.aboutParagraphs?.length ? company.aboutParagraphs : [company.aboutDescription];
+
   return (
-    <div style={{ display: 'grid', gap: designTokens.spacing.lg }}>
+    <div style={{ display: 'grid', gap: designTokens.spacing.lg, maxWidth: '62rem' }}>
       <SectionTitle
         as="h2"
-        eyebrow="Nosotros"
+        eyebrow="Quiénes somos"
         title={company.aboutTitle}
         subtitle={company.aboutSubtitle}
       />
 
-      <p
-        style={{
-          margin: 0,
-          color: theme.textSecondaryColor,
-          fontSize: 'clamp(1rem, 2.5vw, 1.125rem)',
-          lineHeight: 1.7,
-          textAlign: contentAlignment,
-        }}
-      >
-        {company.aboutDescription}
-      </p>
-
-      <div
-        className="about-mv-grid"
-        style={{ display: 'grid', gap: designTokens.spacing.md }}
-      >
-        <article
-          style={{
-            border: `1px solid ${theme.borderColor}`,
-            borderRadius: designTokens.radius.md,
-            padding: designTokens.spacing.lg,
-            backgroundColor: theme.secondaryColor,
-            boxShadow: theme.shadow,
-          }}
-        >
-          <h3
+      <div style={{ display: 'grid', gap: designTokens.spacing.lg }}>
+        {paragraphs.map((paragraph) => (
+          <p
+            key={paragraph.slice(0, 24)}
             style={{
-              margin: `0 0 ${designTokens.spacing.sm}`,
-              color: theme.accentColor,
-              fontSize: '1rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em',
+              margin: 0,
+              color: theme.textSecondaryColor,
+              fontSize: 'clamp(1rem, 2.5vw, 1.125rem)',
+              lineHeight: 1.8,
+              textAlign: contentAlignment,
             }}
           >
-            Misión
-          </h3>
-          <p style={{ margin: 0, color: theme.textOnDarkColor, lineHeight: 1.6, textAlign: contentAlignment }}>
-            {company.mission}
+            {paragraph}
           </p>
-        </article>
-
-        <article
-          style={{
-            border: `1px solid ${theme.borderColor}`,
-            borderRadius: designTokens.radius.md,
-            padding: designTokens.spacing.lg,
-            backgroundColor: theme.secondaryColor,
-            boxShadow: theme.shadow,
-          }}
-        >
-          <h3
-            style={{
-              margin: `0 0 ${designTokens.spacing.sm}`,
-              color: theme.accentColor,
-              fontSize: '1rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em',
-            }}
-          >
-            Visión
-          </h3>
-          <p style={{ margin: 0, color: theme.textOnDarkColor, lineHeight: 1.6, textAlign: contentAlignment }}>
-            {company.vision}
-          </p>
-        </article>
+        ))}
       </div>
+
+      {company.aboutHighlights && company.aboutHighlights.length > 0 ? (
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: designTokens.spacing.sm }}>
+          {company.aboutHighlights.map((item) => (
+            <Badge key={item} label={item} tone="border" />
+          ))}
+        </div>
+      ) : null}
     </div>
   );
 }

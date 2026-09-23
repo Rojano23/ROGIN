@@ -7,17 +7,8 @@ import { theme } from '../../data/theme';
 import { designTokens } from '../../styles/tokens';
 import { Container } from './Container';
 
-function getSocialEntries() {
-  return [
-    { label: 'LinkedIn', href: company.socialLinks.linkedin },
-    { label: 'Instagram', href: company.socialLinks.instagram },
-    { label: 'Facebook', href: company.socialLinks.facebook },
-  ].filter((item) => item.href);
-}
-
 export function Footer() {
   const enabledItems = getEnabledNavigationItems(navigationItems, features);
-  const socialEntries = getSocialEntries();
 
   const sectionTitleStyle: CSSProperties = {
     margin: 0,
@@ -45,10 +36,25 @@ export function Footer() {
       >
         <div className="footer-grid" style={{ display: 'grid', gap: designTokens.spacing.lg }}>
           <section aria-label="Identidad corporativa">
-            <h2 style={{ margin: 0, fontSize: '1.125rem', color: theme.textOnDarkColor }}>{company.companyName}</h2>
-            <p style={{ margin: `${designTokens.spacing.xs} 0 0`, color: theme.textOnDarkColor }}>
+            {company.logo?.src ? (
+              <img
+                src={company.logo.src}
+                alt={company.logo.alt}
+                width={company.logo.width}
+                height={company.logo.height}
+                style={{ maxWidth: '11.5rem', height: 'auto', objectFit: 'contain' }}
+              />
+            ) : null}
+
+            <h2 style={{ margin: `${designTokens.spacing.xs} 0 0`, fontSize: '1.125rem', color: theme.textOnDarkColor }}>
+              {company.companyName}
+            </h2>
+            <p style={{ margin: `${designTokens.spacing.xs} 0 0`, color: theme.textOnDarkColor, maxWidth: '20ch', lineHeight: 1.45 }}>
               {company.tagline}
             </p>
+            {company.descriptor ? (
+              <p style={{ margin: `${designTokens.spacing.sm} 0 0`, color: theme.accentColor, fontWeight: 700 }}>{company.descriptor}</p>
+            ) : null}
           </section>
 
           <nav aria-label="Navegación del pie de página">
@@ -74,45 +80,17 @@ export function Footer() {
 
           <section aria-label="Contacto en pie de página">
             <h3 style={sectionTitleStyle}>Contacto</h3>
-            <p style={{ margin: `0 0 ${designTokens.spacing.xs}`, color: theme.textOnDarkColor }}>{company.email}</p>
-            <p style={{ margin: `0 0 ${designTokens.spacing.xs}`, color: theme.textOnDarkColor }}>{company.phone}</p>
-            <p style={{ margin: 0, color: theme.textOnDarkColor }}>{company.address}</p>
+            <p style={{ margin: `0 0 ${designTokens.spacing.xs}`, color: theme.textOnDarkColor }}>
+              <a href={`mailto:${company.email}`} style={{ color: theme.textOnDarkColor, textDecoration: 'none' }}>
+                {company.email}
+              </a>
+            </p>
+            <p style={{ margin: 0, color: theme.textOnDarkColor }}>{company.phone}</p>
           </section>
-
-          {features.socialLinks && socialEntries.length > 0 ? (
-            <section aria-label="Redes sociales">
-              <h3 style={sectionTitleStyle}>Redes sociales</h3>
-              <ul
-                style={{
-                  listStyle: 'none',
-                  padding: 0,
-                  margin: 0,
-                  display: 'flex',
-                  gap: designTokens.spacing.sm,
-                  flexWrap: 'wrap',
-                }}
-              >
-                {socialEntries.map((entry) => (
-                  <li key={entry.label}>
-                    <a
-                      className="focus-ring"
-                      href={entry.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: theme.textOnDarkColor, textDecoration: 'none' }}
-                      aria-label={`Abrir ${entry.label} en nueva pestaña`}
-                    >
-                      {entry.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ) : null}
         </div>
 
-        <p style={{ margin: 0, color: theme.textSecondaryColor, fontSize: '0.875rem' }}>
-          {new Date().getFullYear()} {company.companyName}. Todos los derechos reservados.
+        <p style={{ margin: `${designTokens.spacing.sm} 0 0`, color: '#9AA9C5', fontSize: '0.875rem' }}>
+          © {new Date().getFullYear()} {company.companyName}. Todos los derechos reservados.
         </p>
       </Container>
     </footer>

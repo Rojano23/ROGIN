@@ -36,6 +36,26 @@ export function MobileMenu({ isOpen, items, onClose, activeHref }: MobileMenuPro
           style={{ justifyContent: 'flex-start', width: '100%' }}
         />
       ))}
+
+      <a
+        href="#contacto"
+        className="focus-ring"
+        style={{
+          width: '100%',
+          display: 'inline-flex',
+          justifyContent: 'center',
+          textDecoration: 'none',
+          color: theme.secondaryColor,
+          backgroundColor: '#FF7C1A',
+          border: '1px solid #FF7C1A',
+          borderRadius: designTokens.radius.sm,
+          padding: `${designTokens.spacing.sm} ${designTokens.spacing.md}`,
+          fontWeight: 700,
+        }}
+        onClick={onClose}
+      >
+        Solicitar información
+      </a>
     </div>
   );
 }

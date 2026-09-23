@@ -9,3 +9,12 @@ export { services } from './services';
 export { theme } from './theme';
 export { clientConfig, createClientConfig } from './clientConfig';
 export { navigationItems, getEnabledNavigationItems } from './navigation';
+export {
+    mtvsClients,
+    mtvsContactImage,
+    mtvsMissionImage,
+    mtvsSpecialist,
+    mtvsTeam,
+    mtvsTrustRecord,
+    mtvsValues,
+} from './mtvs';

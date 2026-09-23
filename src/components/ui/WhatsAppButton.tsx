@@ -5,9 +5,13 @@ import { features } from '../../data/features';
 import { theme } from '../../data/theme';
 import { designTokens } from '../../styles/tokens';
 
-function buildWhatsAppUrl(phone: string): string {
+function buildWhatsAppUrl(phone: string, message?: string): string {
   const normalizedPhone = phone.replace(/\D+/g, '');
-  return `https://wa.me/${normalizedPhone}`;
+  if (!message) {
+    return `https://wa.me/${normalizedPhone}`;
+  }
+
+  return `https://wa.me/${normalizedPhone}?text=${encodeURIComponent(message)}`;
 }
 
 export function WhatsAppButton() {
@@ -41,7 +45,7 @@ export function WhatsAppButton() {
   return (
     <a
       className="focus-ring"
-      href={buildWhatsAppUrl(company.whatsapp)}
+      href={buildWhatsAppUrl(company.whatsapp, company.whatsappMessage)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Contactar por WhatsApp al ${company.whatsapp}`}

@@ -19,13 +19,34 @@ export function HeroContent({ company }: HeroContentProps) {
   }
 
   return (
-    <div style={{ display: 'grid', gap: designTokens.spacing.md }}>
+    <div style={{ display: 'grid', gap: designTokens.spacing.lg, maxWidth: '42rem' }}>
       <SectionTitle
         as="h1"
         eyebrow={company.tagline}
         title={company.heroTitle}
         subtitle={company.heroDescription}
       />
+
+      {company.heroBadges && company.heroBadges.length > 0 ? (
+        <p style={{ margin: 0, color: theme.textSecondaryColor, fontWeight: 700, letterSpacing: '0.02em' }}>
+          {company.heroBadges.join(' · ')}
+        </p>
+      ) : null}
+
+      {company.heroTrustIndicators && company.heroTrustIndicators.length > 0 ? (
+        <p
+          style={{
+            margin: 0,
+            color: theme.primaryColor,
+            fontWeight: 700,
+            fontFamily: theme.fontFamilyHeading,
+            letterSpacing: '0.04em',
+            fontSize: '1.05rem',
+          }}
+        >
+          {company.heroTrustIndicators[0]}
+        </p>
+      ) : null}
 
       <div
         style={{

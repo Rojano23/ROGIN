@@ -8,7 +8,7 @@ export interface ServicesGridProps {
 
 export function ServicesGrid({ services, contentAlignment }: ServicesGridProps) {
   return (
-    <div className="services-grid" role="list" aria-label="Lista de servicios">
+    <div className="courses-grid" role="list" aria-label="Lista de cursos">
       {services.map((service) => (
         <div key={service.id} role="listitem" style={{ display: 'flex' }}>
           <ServiceCard service={service} contentAlignment={contentAlignment} />

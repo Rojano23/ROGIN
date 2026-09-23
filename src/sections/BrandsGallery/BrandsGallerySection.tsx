@@ -1,4 +1,5 @@
 import { Section } from '../../components/layout';
+import { SectionTitle } from '../../components/ui';
 import { clientConfig } from '../../data';
 import { designTokens } from '../../styles/tokens';
 import { BrandsMarquee } from './BrandsMarquee';
@@ -12,8 +13,15 @@ export function BrandsGallerySection() {
   }
 
   return (
-    <Section ariaLabel="Galería de marcas y productos" id="marcas-galeria" spacing="lg">
+    <Section ariaLabel="Experiencia y galería" id="experiencia" spacing="lg">
       <div style={{ display: 'grid', gap: designTokens.spacing.xl }}>
+        <SectionTitle
+          as="h2"
+          eyebrow="Experiencia"
+          title="Galería"
+          subtitle="+100 profesionales capacitados"
+        />
+
         {gallery.brands.length > 0 ? (
           <BrandsMarquee title={gallery.brandsTitle} items={gallery.brands} />
         ) : null}

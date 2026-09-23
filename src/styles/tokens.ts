@@ -32,31 +32,26 @@ export interface DesignTokens {
 
 export const designTokens: DesignTokens = {
   colors: {
-    primary: '#155A7A',
-    secondary: '#0B2638',
-
-    accent: '#F28C28',
-
-    background: '#F4F6F7',
-
-    text: '#17212B',
-    textSecondary: '#64748B',
-
+    primary: '#172A4D',
+    secondary: '#0A093B',
+    accent: '#E4D11F',
+    background: '#F6F7FA',
+    text: '#292F38',
+    textSecondary: '#202A36',
     textOnDark: '#FFFFFF',
-    muted: '#475569',
-
-    border: '#D8E0E5',
+    muted: '#5A6472',
+    border: '#D6DDE8',
   },
   typography: {
-    body: 'Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-    heading: 'Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+    body: '"Source Sans 3", "Segoe UI", Tahoma, sans-serif',
+    heading: '"Rajdhani", "Arial Narrow", sans-serif',
   },
   radius: {
     sm: '0.5rem',
     md: '0.75rem',
     lg: '1rem',
   },
-  shadow: '0 10px 30px rgba(2, 6, 23, 0.25)',
+  shadow: '0 10px 28px rgba(10, 9, 59, 0.16)',
   spacing: {
     xs: '0.25rem',
     sm: '0.5rem',

@@ -17,8 +17,9 @@ export function HeroVisual({ company }: HeroVisualProps) {
           alt={company.heroImageAlt}
           style={{
             width: '100%',
-            minHeight: '16rem',
+            minHeight: '19rem',
             objectFit: 'cover',
+            objectPosition: 'center 24%',
             borderRadius: designTokens.radius.lg,
             border: `1px solid ${theme.borderColor}`,
             boxShadow: theme.shadow,

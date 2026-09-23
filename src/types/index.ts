@@ -46,6 +46,7 @@ export interface Differentiator {
 export interface Company {
   companyName: string;
   logo?: CompanyLogo;
+  descriptor?: string;
   tagline: string;
   description: string;
   heroTitle: string;
@@ -62,7 +63,10 @@ export interface Company {
   aboutTitle: string;
   aboutSubtitle: string;
   aboutDescription: string;
+  aboutParagraphs?: string[];
+  aboutHighlights?: string[];
   mission: string;
+  missionQuote?: string;
   vision: string;
   differentiators: Differentiator[];
   /** Reserved for future corporate metrics */
@@ -72,6 +76,7 @@ export interface Company {
   phone: string;
   email: string;
   whatsapp: string;
+  whatsappMessage?: string;
   address: string;
   businessHours: string;
   googleMapsUrl: string;

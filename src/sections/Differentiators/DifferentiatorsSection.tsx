@@ -12,13 +12,13 @@ export function DifferentiatorsSection() {
   }
 
   return (
-    <Section ariaLabel="Diferenciadores" id="diferenciadores" spacing="lg">
-      <div style={{ display: 'grid', gap: designTokens.spacing.lg }}>
+    <Section ariaLabel="Por qué MTVS" id="por-que-mtvs" spacing="lg">
+      <div style={{ display: 'grid', gap: designTokens.spacing.lg, maxWidth: '56rem' }}>
         <SectionTitle
           as="h2"
-          eyebrow="Por qué elegirnos"
-          title="Nuestros diferenciadores"
-          subtitle="Principios estructurales que hacen escalable y sostenible esta plantilla."
+          eyebrow="Por qué MTVS"
+          title="Por qué MTVS"
+          subtitle="Capacitación orientada a la operación real, el desempeño técnico y el desarrollo profesional."
         />
         <DifferentiatorsGrid items={company.differentiators} />
       </div>

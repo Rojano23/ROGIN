@@ -2,7 +2,7 @@ import type { CSSProperties } from 'react';
 
 import { theme } from '../../data/theme';
 import { designTokens } from '../../styles/tokens';
-import { InfoCard } from '../../components/cards';
+import { BaseCard } from '../../components/cards';
 import { SectionTitle } from '../../components/ui';
 import type { Company } from '../../types';
 
@@ -22,18 +22,29 @@ export function ContactDetails({ company }: ContactDetailsProps) {
     { title: 'Correo', description: company.email },
     { title: 'Dirección', description: company.address },
     { title: 'Horario', description: company.businessHours },
-  ];
+  ].filter((item) => item.description);
 
   return (
     <section aria-label="Datos de contacto" style={{ display: 'grid', gap: designTokens.spacing.md }}>
-      <SectionTitle as="h3" eyebrow="Dónde encontrarnos" title="Información de contacto" />
+      <SectionTitle as="h3" eyebrow="Contacto directo" title="Información de contacto" />
       <div style={gridStyle} className="contact-details-grid">
         {items.map((item) => (
-          <InfoCard key={item.title} title={item.title} description={item.description} ariaLabel={item.title} />
+          <BaseCard
+            key={item.title}
+            ariaLabel={item.title}
+            style={{
+              display: 'grid',
+              gap: designTokens.spacing.xs,
+              padding: designTokens.spacing.md,
+            }}
+          >
+            <p style={{ margin: 0, fontWeight: 700 }}>{item.title}</p>
+            <p style={{ margin: 0, color: theme.textOnDarkColor }}>{item.description}</p>
+          </BaseCard>
         ))}
       </div>
       <p style={{ margin: 0, color: theme.textSecondaryColor, lineHeight: 1.6 }}>
-        Contáctanos para una cotización a nuestro correo de contacto.
+        Escríbenos para recibir información sobre cursos y servicios de MTVS.
       </p>
     </section>
   );

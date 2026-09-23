@@ -12,19 +12,15 @@ export function ProductsMarquee({ title, items }: ProductsMarqueeProps) {
     return null;
   }
 
-  const duplicatedItems = [...items, ...items];
-
   return (
     <section aria-label={title} style={{ display: 'grid', gap: designTokens.spacing.md }}>
       <SectionTitle as="h3" title={title} />
-      <div className="gallery-marquee" aria-label={title}>
-        <div className="gallery-marquee-track">
-          {duplicatedItems.map((product, index) => (
-            <div key={`${product.title}-${index}`} className="gallery-marquee-item gallery-product-item">
-              <img src={product.image} alt={product.title} loading="lazy" />
-            </div>
-          ))}
-        </div>
+      <div className="gallery-products-grid" role="list" aria-label={title}>
+        {items.map((product) => (
+          <div key={product.title} className="gallery-product-item" role="listitem">
+            <img src={product.image} alt={product.title} loading="lazy" />
+          </div>
+        ))}
       </div>
     </section>
   );
